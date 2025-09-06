@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 public class TestOperationService {
 
     public Integer suma(Long numberOne, Long numberTwo) {
-        return numberOne.intValue() + numberTwo.intValue();
+        return numberOne.intValue() + numberTwo.intValue() + 1;
     }
 }
