@@ -30,6 +30,14 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+jacocoTestReport {
+  dependsOn test
+  reports {
+    xml.required = true
+    html.required = true
+  }
+}
+
 sonar {
   properties {
     property "sonar.projectKey", "HenaoGiordy_tests-java"
