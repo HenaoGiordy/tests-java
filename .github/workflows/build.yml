@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
-      - feature/develop
+      - 'feature/develop'
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches:
+      - main
+      - 'feature/develop'
 
 jobs:
   test:
@@ -46,8 +48,9 @@ jobs:
       - name: Run tests
         run: ./gradlew clean test jacocoTestReport --no-daemon
       
-      - name: Build and analyze
+      - name: SonarCloud analyze (PR)
+        if: ${{ github.event_name == 'pull_request' }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew build sonar --info
+        run: ./gradlew sonar --info
