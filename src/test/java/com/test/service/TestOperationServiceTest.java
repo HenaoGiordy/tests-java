@@ -46,4 +46,15 @@ public class TestOperationServiceTest {
         assertEquals(5, result);
     }
 
+    @Test
+    public void testDivideByZero() {
+        Long numberOne = 10L;
+        Long numberTwo = 0L;
+        try {
+            testOperationService.divide(numberOne, numberTwo);
+        } catch (IllegalArgumentException e) {
+            assertEquals("Division by zero is not allowed.", e.getMessage());
+        }
+    }
+
 }
