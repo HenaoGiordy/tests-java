@@ -10,6 +10,17 @@ public class TestOperationService {
     }
 
     public Integer resta(Long numberOne, Long numberTwo) {
-        return numberOne.intValue() - numberTwo.intValue() + 2;
+        return numberOne.intValue() - numberTwo.intValue();
+    }
+
+    public Integer multiply(Long numberOne, Long numberTwo) {
+        return numberOne.intValue() * numberTwo.intValue();
+    }
+
+    public Integer divide(Long numberOne, Long numberTwo) {
+        if (numberTwo == 0) {
+            throw new IllegalArgumentException("Division by zero is not allowed.");
+        }
+        return numberOne.intValue() / numberTwo.intValue();
     }
 }
