@@ -24,5 +24,9 @@ public class TestOperationController {
         return ResponseEntity.ok(testOperationService.suma(numberOne, numberTwo));
     }
 
+    @GetMapping("/resta")
+    public ResponseEntity<Integer> resta(@RequestParam Long numberOne, @RequestParam Long numberTwo) {
+        return ResponseEntity.ok(testOperationService.resta(numberOne, numberTwo));
+    }
     
 }

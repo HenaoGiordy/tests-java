@@ -22,4 +22,12 @@ public class TestOperationServiceTest {
         
     }
 
+    @Test
+    public void testResta() {
+        Long numberOne = 10L;
+        Long numberTwo = 5L;
+        Integer result = testOperationService.resta(numberOne, numberTwo);
+        assertEquals(5, result);
+    }
+
 }
