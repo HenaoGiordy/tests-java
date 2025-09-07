@@ -30,4 +30,20 @@ public class TestOperationServiceTest {
         assertEquals(5, result);
     }
 
+    @Test
+    public void testMultiply() {
+        Long numberOne = 5L;
+        Long numberTwo = 10L;
+        Integer result = testOperationService.multiply(numberOne, numberTwo);
+        assertEquals(50, result);
+    }
+
+    @Test
+    public void testDivide() {
+        Long numberOne = 10L;
+        Long numberTwo = 2L;
+        Integer result = testOperationService.divide(numberOne, numberTwo);
+        assertEquals(5, result);
+    }
+
 }
