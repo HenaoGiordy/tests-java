@@ -10,6 +10,6 @@ public class TestOperationService {
     }
 
     public Integer resta(Long numberOne, Long numberTwo) {
-        return numberOne.intValue() - numberTwo.intValue() + 2;
+        return numberOne.intValue() - numberTwo.intValue();
     }
 }
